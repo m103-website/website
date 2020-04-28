@@ -2,14 +2,13 @@
   <mat-tab [label]="collection.autor" *ngFor="let collection of collections; let index = index">
       <div style="margin: 20px">
         <div fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="space-evenly center" fxLayoutAlign.gt-md="space-evenly center" fxLayoutGap="50px">
-        <mat-card *ngFor="let picture of collection.pictures">
+        <mat-card style="min-width: 350px; min-height: 450px" *ngFor="let picture of collection.pictures">
           <mat-card-header>
             <mat-card-title>{{picture.title}}</mat-card-title>
             <button style="position: absolute; right: 10px;" mat-icon-button (click)="openFullscreenDialog(collection.path, picture.filename)"><mat-icon>fullscreen</mat-icon></button>
           </mat-card-header>
-          <mat-card-content style="padding: 30px 0">
-            <div>
-              <div style="display: flex; justify-content: space-between;">
+          <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between center">
                 <p>Bearbeitet</p>
                 <p>Original</p>
               </div>
@@ -19,7 +18,6 @@
                   <img (load)="onLoad(picture, false)" [src]="'assets/pictures/' + collection.path + '/bearbeitet/' + picture.filename + '.jpg'" alt="Bearbeitet">
                 </div>
               </div>
-            </div>
             <mat-progress-bar style="float: right" *ngIf="!pictureLoaded(picture)" mode="indeterminate"></mat-progress-bar>
           </mat-card-content>
           <mat-card-content>
