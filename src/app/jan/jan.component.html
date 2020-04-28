@@ -1,17 +1,13 @@
 <mat-card>
   <mat-card-header><h2>Foto 1</h2></mat-card-header>
-  <mat-card-content><img class="card-image" src="assets/pictures/jan/high/wasserhahn_vorher.jpg"/></mat-card-content>
+  <mat-card-content>
+    <div id="slider" class="beer-slider" data-beer-label="Original" data-beer-start="50">
+      <img src="assets/pictures/jan/high/wasserhahn_vorher.jpg" alt="bild1">
+      <div class="beer-reveal" data-beer-label="Bearbeitet">
+        <img src="assets/pictures/jan/high/wasserhahn_nachher.jpg" alt="bild2">
+      </div>
+    </div>
+  </mat-card-content>
   <mat-card-footer>ISO:<br/>Blende:</mat-card-footer>
 </mat-card>
 
-<div id="slider" class="beer-slider" data-beer-label="Original" data-beer-start="50">
-  <img src="assets/pictures/jan/high/wasserhahn_vorher.jpg" alt="bild1">
-  <div class="beer-reveal" data-beer-label="Bearbeitet">
-    <img src="assets/pictures/jan/high/wasserhahn_nachher.jpg" alt="bild2">
-  </div>
-</div>
-
-<script src="https://unpkg.com/beerslider/dist/BeerSlider.js"></script>
-<script>
-  new BeerSlider(document.getElementById('slider'));
-</script>

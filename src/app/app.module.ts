@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
 import { JanComponent } from './jan/jan.component';
 import { HomeComponent } from './home/home.component';
-import {MatCardModule} from '@angular/material';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
