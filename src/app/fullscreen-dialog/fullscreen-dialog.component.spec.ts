@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JanicComponent } from './janic.component';
+import { FullscreenDialogComponent } from './fullscreen-dialog.component';
 
-describe('JanicComponent', () => {
-  let component: JanicComponent;
-  let fixture: ComponentFixture<JanicComponent>;
+describe('FullscreenDialogComponent', () => {
+  let component: FullscreenDialogComponent;
+  let fixture: ComponentFixture<FullscreenDialogComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ JanicComponent ]
+      declarations: [ FullscreenDialogComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(JanicComponent);
+    fixture = TestBed.createComponent(FullscreenDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

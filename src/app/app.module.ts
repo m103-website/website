@@ -5,19 +5,23 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterModule} from '@angular/router';
-import { JanComponent } from './jan/jan.component';
-import { HomeComponent } from './home/home.component';
 import {MatCardModule} from "@angular/material/card";
-import { JanicComponent } from './janic/janic.component';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
+import { FullscreenDialogComponent } from './fullscreen-dialog/fullscreen-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { PreviewComponent } from './preview/preview.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    JanComponent,
-    HomeComponent,
-    JanicComponent
+    FullscreenDialogComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,13 @@ import {MatButtonModule} from "@angular/material/button";
     RouterModule,
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
