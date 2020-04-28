@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as beer from 'node_modules/beerslider/dist/BeerSlider.js';
-
-declare var BeerSlider: beer;
+import * as BeerSliderScript from 'node_modules/beerslider/dist/BeerSlider.js'
+declare var BeerSlider: BeerSliderScript;
 
 @Component({
   selector: 'app-jan',
