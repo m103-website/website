@@ -26,10 +26,10 @@
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
-              "src/assets/BeerSlider.css"
+              "./node_modules/beerslider/dist/BeerSlider.css"
             ],
             "scripts": [
-              "src/assets/BeerSlider.js"
+              "./node_modules/beerslider/dist/BeerSlider.js"
             ]
           },
           "configurations": {
