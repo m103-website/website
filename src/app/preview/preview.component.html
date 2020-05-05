@@ -1,7 +1,7 @@
 <mat-tab-group #tabGroup (selectedTabChange)="initCollection($event)">
   <mat-tab [label]="collection.autor" *ngFor="let collection of collections; let index = index">
       <div style="margin: 20px">
-        <div fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="space-evenly center" fxLayoutAlign.gt-md="space-evenly center" fxLayoutGap="50px">
+        <div fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="space-evenly center" fxLayoutAlign.gt-md="space-evenly center" fxLayoutGap="25px">
         <mat-card style="min-width: 350px; min-height: 450px" *ngFor="let picture of collection.pictures">
           <mat-card-header>
             <mat-card-title>{{picture.title}}</mat-card-title>

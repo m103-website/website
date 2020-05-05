@@ -1,0 +1,15 @@
+<div fxLayout="column" fxLayoutAlign="space-evenly center" fxLayoutGap="25px">
+  <mat-card class="video-card">
+    <mat-card-header><h2>NASA Livestream</h2></mat-card-header>
+    <mat-card-content>
+      <iframe id="content" [height]="getHeight()" class="stream" src="https://www.youtube.com/embed/XBPjVzSoepo?controls=0" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="video-card">
+    <mat-card-header><h2>The Sims 4 Trailer</h2></mat-card-header>
+    <mat-card-content>
+      <video class="video" src="assets/videos/The_Sims_4_Launch_Trailer.mp4" controls></video>
+    </mat-card-content>
+  </mat-card>
+</div>

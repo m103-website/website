@@ -1,2 +1,10 @@
-<mat-toolbar color="primary" class="mat-elevation-z3">Modul 153</mat-toolbar>
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
+    <p>Modul 153</p>
+    <div>
+      <button mat-button routerLink="photos">Fotogalerie</button>
+      <button mat-button routerLink="videos">Videogalerie</button>
+    </div>
+  </div>
+</mat-toolbar>
 <router-outlet></router-outlet>

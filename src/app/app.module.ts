@@ -16,12 +16,14 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { VideoComponent } from './video/video.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullscreenDialogComponent,
-    PreviewComponent
+    PreviewComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
