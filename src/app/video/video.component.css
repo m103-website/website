@@ -11,3 +11,8 @@
   max-width: 1280px;
   margin: 25px 25px 0;
 }
+
+.last-video-card {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
