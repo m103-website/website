@@ -1,7 +1,21 @@
-<button style="float: right" mat-icon-button (click)="onNoClick()"><mat-icon>close</mat-icon></button>
+<button style="float: right" mat-icon-button (click)="onNoClick()">
+  <mat-icon>close</mat-icon>
+</button>
 <div [id]="data + '-slider-fullscreen'" class="beer-slider" data-beer-label="Original" data-beer-start="50">
-  <img style="object-fit: scale-down;" [src]="'assets/pictures/' + data.path + '/unbearbeitet/' + data.filename + '.jpg'" alt="Original">
-  <div class="beer-reveal" data-beer-label="Bearbeitet">
-    <img style="object-fit: scale-down;" [src]="'assets/pictures/' + data.path + '/bearbeitet/' + data.filename + '.jpg'" alt="Bearbeitet">
-  </div>
+  <ng-container *ngIf="!data.hasOriginal">
+    <img style="object-fit: scale-down;"
+         [src]="'assets/pictures/' + data.path + '/unbearbeitet/' + data.filename + '.jpg'" alt="Original">
+    <div class="beer-reveal" data-beer-label="Bearbeitet">
+      <img style="object-fit: scale-down;"
+           [src]="'assets/pictures/' + data.path + '/bearbeitet/' + data.filename + '.jpg'" alt="Bearbeitet">
+    </div>
+  </ng-container>
+  <ng-container *ngIf="data.hasOriginal">
+    <img style="object-fit: scale-down;"
+         [src]="'assets/pictures/' + data.path + '/highres/unbearbeitet/' + data.filename + '.jpg'" alt="Original">
+    <div class="beer-reveal" data-beer-label="Bearbeitet">
+      <img style="object-fit: scale-down;"
+           [src]="'assets/pictures/' + data.path + '/highres/bearbeitet/' + data.filename + '.jpg'" alt="Bearbeitet">
+    </div>
+  </ng-container>
 </div>

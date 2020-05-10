@@ -5,7 +5,8 @@
         <mat-card style="min-width: 350px; min-height: 450px" *ngFor="let picture of collection.pictures">
           <mat-card-header>
             <mat-card-title>{{picture.title}}</mat-card-title>
-            <button style="position: absolute; right: 10px;" mat-icon-button (click)="openFullscreenDialog(collection.path, picture.filename)"><mat-icon>fullscreen</mat-icon></button>
+            <button *ngIf="collection.hasOriginal" style="position: absolute; right: 10px;" mat-icon-button (click)="openFullscreenDialog(collection.path, picture.filename, collection.hasOriginal)" matTooltip="Bilder in voller Auflösung anzeigen" matTooltipPosition="left"><mat-icon>fullscreen</mat-icon></button>
+            <button *ngIf="!collection.hasOriginal" style="position: absolute; right: 10px;" mat-icon-button (click)="openFullscreenDialog(collection.path, picture.filename, collection.hasOriginal)"><mat-icon>fullscreen</mat-icon></button>
           </mat-card-header>
           <mat-card-content>
               <div fxLayout="row" fxLayoutAlign="space-between center">
@@ -21,9 +22,14 @@
             <mat-progress-bar style="float: right" *ngIf="!pictureLoaded(picture)" mode="indeterminate"></mat-progress-bar>
           </mat-card-content>
           <mat-card-content>
-            ISO: {{picture.iso === '' ? 'unknown' : picture.iso}}
+            <b>ISO:</b> {{picture.iso === '' ? 'unknown' : picture.iso}}
             <br/>
-            Blende: {{picture.blende === '' ? 'unknown' : picture.blende}}
+            <b>Blende:</b> {{picture.blende === '' ? 'unknown' : picture.blende}}
+            <br/>
+            <b>Verschlusszeit:</b> {{picture.verschlusszeit === '' ? 'unknown' : picture.verschlusszeit}}
+          </mat-card-content>
+          <mat-card-content>
+            <b>Beschreibung:</b> {{picture.text === '' ? 'unknown' : picture.text}}
           </mat-card-content>
         </mat-card>
       </div>

@@ -17,6 +17,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { VideoComponent } from './video/video.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -25,21 +26,22 @@ import { VideoComponent } from './video/video.component';
     PreviewComponent,
     VideoComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    RouterModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    FlexLayoutModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        RouterModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatTabsModule,
+        MatToolbarModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        FlexLayoutModule,
+        MatTooltipModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
