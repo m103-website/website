@@ -4,10 +4,12 @@ import {FullscreenDialogComponent} from '../fullscreen-dialog/fullscreen-dialog.
 
 import * as BeerSliderScript from 'node_modules/beerslider/dist/BeerSlider.js';
 import {MatTabChangeEvent} from '@angular/material/tabs';
+import {$e} from "codelyzer/angular/styles/chars";
 
 declare var BeerSlider: BeerSliderScript;
 
 export interface Collection {
+  index: number,
   path: string,
   autor: string,
   pictures: Picture[]
@@ -28,11 +30,12 @@ export interface Picture {
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.css']
 })
-export class PreviewComponent implements AfterViewInit{
+export class PreviewComponent{
   @ViewChild('tabGroup') tabGroup;
 
   collections: Collection[] = [
     {
+      index: 0,
       path: 'janic',
       autor: 'Janic',
       pictures: [
@@ -43,6 +46,7 @@ export class PreviewComponent implements AfterViewInit{
       hasOriginal: false
     },
     {
+      index: 1,
       path: 'jan',
       autor: 'Jan',
       pictures: [
@@ -53,9 +57,13 @@ export class PreviewComponent implements AfterViewInit{
       hasOriginal: true
     },
     {
+      index: 2,
       path: 'marco',
       autor: 'Marco',
-      pictures: [],
+      pictures: [
+        {filename: 'steinklein', title: 'Stein klein', iso: '', blende: '', verschlusszeit: '', text: ''},
+        {filename: 'schachfigur', title: 'Schachfigur', iso: '', blende: '', verschlusszeit: '',  text: ''}
+      ],
       hasOriginal: false
     }
   ];
@@ -64,13 +72,6 @@ export class PreviewComponent implements AfterViewInit{
 
   loadedInnerImages = new Set<Picture>();
   loadedOuterImages = new Set<Picture>();
-
-  currentTab: number = null;
-
-  ngAfterViewInit(): void {
-    this.initCollection();
-    this.currentTab = this.tabGroup.selectedIndex;
-  }
 
   openFullscreenDialog(path: string, filename: string, hasOriginal: boolean): void {
     const dialogRef = this.dialog.open(FullscreenDialogComponent, {
@@ -87,6 +88,9 @@ export class PreviewComponent implements AfterViewInit{
   }
 
   onLoad(picture: Picture, type: boolean) {
+    if (type == false){
+      this.initCollection();
+    }
     if (type){
       this.loadedInnerImages.add(picture);
     }else {

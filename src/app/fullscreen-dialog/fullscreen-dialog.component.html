@@ -1,18 +1,18 @@
 <div fxLayout="column" fxLayoutAlign="center center">
-  <div [id]="data + '-slider-fullscreen'" class="beer-slider" data-beer-label="Original" data-beer-start="50" style="max-width: 60vw">
+  <div [id]="data + '-slider-fullscreen'" class="beer-slider" data-beer-label="Original" data-beer-start="50">
     <ng-container *ngIf="!data.hasOriginal">
-      <img style="object-fit: contain"
+      <img style="max-height: 90vh; object-fit: cover"
            [src]="'assets/pictures/' + data.path + '/unbearbeitet/' + data.filename + '.jpg'" alt="Original">
       <div class="beer-reveal" data-beer-label="Bearbeitet">
-        <img style="object-fit: contain"
+        <img style="max-height: 90vh; object-fit: cover"
              [src]="'assets/pictures/' + data.path + '/bearbeitet/' + data.filename + '.jpg'" alt="Bearbeitet">
       </div>
     </ng-container>
     <ng-container *ngIf="data.hasOriginal">
-      <img style="object-fit: contain"
+      <img style="max-height: 90vh; object-fit: cover"
            [src]="'assets/pictures/' + data.path + '/highres/unbearbeitet/' + data.filename + '.jpg'" alt="Original">
       <div class="beer-reveal" data-beer-label="Bearbeitet">
-        <img style="object-fit: contain"
+        <img style="max-height: 90vh; object-fit: cover"
           [src]="'assets/pictures/' + data.path + '/highres/bearbeitet/' + data.filename + '.jpg'" alt="Bearbeitet">
       </div>
     </ng-container>
