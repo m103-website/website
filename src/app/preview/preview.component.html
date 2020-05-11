@@ -2,7 +2,7 @@
   <mat-tab [label]="collection.autor" *ngFor="let collection of collections; let index = index">
       <div style="margin: 20px">
         <div fxLayout="column" fxLayout.gt-md="row" fxLayoutAlign="space-evenly center" fxLayoutAlign.gt-md="space-evenly center" fxLayoutGap="25px">
-        <mat-card style="min-width: 350px; min-height: 450px" *ngFor="let picture of collection.pictures">
+        <mat-card style="width: 100%" *ngFor="let picture of collection.pictures">
           <mat-card-header>
             <mat-card-title>{{picture.title}}</mat-card-title>
             <button *ngIf="collection.hasOriginal" style="position: absolute; right: 10px;" mat-icon-button (click)="openFullscreenDialog(collection.path, picture.filename, collection.hasOriginal)" matTooltip="Bilder in voller Auflösung anzeigen" matTooltipPosition="left"><mat-icon>fullscreen</mat-icon></button>
@@ -13,13 +13,13 @@
                 <p>Bearbeitet</p>
                 <p>Original</p>
               </div>
-              <div [id]="picture.filename + '-slider'" class="beer-slider" data-beer-start="50">
+              <div [id]="picture.filename + '-slider'" class="beer-slider" data-beer-start="50" fxLayout="column" fxLayoutAlign="center center">
                 <img (load)="onLoad(picture, true)" [src]="'assets/pictures/' + collection.path + '/unbearbeitet/' + picture.filename + '.jpg'"  alt="Original">
                 <div class="beer-reveal">
                   <img (load)="onLoad(picture, false)" [src]="'assets/pictures/' + collection.path + '/bearbeitet/' + picture.filename + '.jpg'" alt="Bearbeitet">
                 </div>
+                <mat-progress-spinner style="position: absolute" *ngIf="!pictureLoaded(picture)" mode="indeterminate"></mat-progress-spinner>
               </div>
-            <mat-progress-bar style="float: right" *ngIf="!pictureLoaded(picture)" mode="indeterminate"></mat-progress-bar>
           </mat-card-content>
           <mat-card-content>
             <b>ISO:</b> {{picture.iso === '' ? 'unknown' : picture.iso}}
