@@ -1,10 +1,16 @@
 <mat-toolbar color="primary" class="mat-elevation-z3">
   <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%">
     <p>Modul 153 - Team Website</p>
+    <p style="font-size: 13px">⚠ Routing is not possible because server is not configured for an angular app. Use the buttons instead.</p>
     <div>
-      <button mat-button routerLink="photos">Fotogalerie</button>
-      <button mat-button routerLink="videos">Videogalerie</button>
+      <button mat-button [style.text-decoration]="isCurrentComponent('preview') ? 'underline' : 'none'" (click)="switchComponent('preview')">Fotogalerie</button>
+      <button mat-button [style.text-decoration]="isCurrentComponent('video') ? 'underline' : 'none'" (click)="switchComponent('video')">Videogalerie</button>
     </div>
   </div>
 </mat-toolbar>
-<router-outlet></router-outlet>
+
+<div>
+  <ng-container #target>
+    <app-preview *ngIf="initialState"></app-preview>
+  </ng-container>
+</div>
